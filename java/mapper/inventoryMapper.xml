@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="InventoryMapper">
+<select id="list" parameterType="hashmap" resultType="ivo">
+SELECT iid, serial, classifi, vendor, naming, i.pid, mod_at, reason, p.pnr_name, p.addr
+FROM inventory i INNER JOIN partner p
+ON i.pid = p.pid
+WHERE classifi=#{classifi} AND vendor=#{vendor} AND availd='Y';
+</select>
+
+<select id="select" parameterType="int" resultType="ivo">
+SELECT iid, serial, i.classifi, i.vendor, model, naming, i.reg_at, i.writer, i.pid, c.e_name, c.k_name, v.vendor_name, p.pnr_name
+FROM inventory i INNER JOIN class c
+ON i.classifi = c.classifi 
+INNER JOIN vendor v
+ON i.vendor = v.vendor
+INNER JOIN partner p
+ON i.pid = p.pid
+WHERE iid = #{iid};
+</select>
+
+<update id="update" parameterType="ivo">
+UPDATE inventory SET serial=#{serial}, classifi=#{classifi}, vendor=#{vendor}, model=#{model}, naming=#{naming}, pid=#{pid}
+WHERE iid=#{iid}
+</update>
+
+<insert id="insert" parameterType="ivo">
+INSERT INTO inventory (serial, classifi, vendor, model, naming, writer, pid)
+VALUES (#{serial}, #{classifi}, #{vendor}, #{model}, #{naming}, #{writer}, #{pid})
+</insert>
+
+<update id="delete" parameterType="int">
+UPDATE inventory SET availd='N' WHERE iid=#{iid}
+</update>
+</mapper>
