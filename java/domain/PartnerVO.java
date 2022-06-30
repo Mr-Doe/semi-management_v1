@@ -13,9 +13,11 @@ public class PartnerVO {
 	
 	public PartnerVO() {}
 
-	public PartnerVO(int pid, String pnr_name) {
+	public PartnerVO(int pid, String pnr_name, String pnr_tel, String addr) {
 		this.pid = pid;
 		this.pnr_name = pnr_name;
+		this.pnr_tel = pnr_tel;
+		this.addr = addr;
 	}
 
 	public int getPid() {
