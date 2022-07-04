@@ -61,8 +61,8 @@ function makeInventoryList(vendor) {
                         </div>
 
                         <form class="form-floating col-2" action="/pnr/detail">
-                            <input value="${ivo.pid }" name="pid" hidden>
-						    <button class="list-group-item btn btn-outline-light text-start form-control">${ivo.pnr_name }</button>
+                            <input value="${result[i].pid }" name="pid" hidden>
+						    <button class="list-group-item btn btn-outline-light text-start form-control">${result[i].pnr_name }</button>
 						    <label>Partner</label>
                         </form>
 
