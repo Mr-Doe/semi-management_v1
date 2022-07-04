@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="PartnerMapper">
+<select id="list" resultType="pvo">
+  SELECT
+    pid
+    , pnr_name
+    , pnr_tel
+    , addr
+    , p.sales_mgr
+    , a.name
+  FROM
+    partner p
+      INNER JOIN account a
+       ON p.sales_mgr = a.uid
+</select>
+
+<select id="select" resultType="pvo" parameterType="int">
+  SELECT
+    pid
+    , pnr_name
+    , addr
+    , pnr_tel
+    , c_mgr
+    , c_tel
+    , sales_mgr
+    , reg_at
+    , writer
+    , a.name
+  FROM
+    partner p
+      INNER JOIN account a
+        ON p.sales_mgr = a.uid
+  WHERE
+    pid=#{pid}
+</select>
+
+<update id="update" parameterType="pvo">
+  UPDATE partner SET
+    pnr_name=#{pnr_name}
+    , addr=#{addr}
+    , pnr_tel=#{pnr_tel}
+    , c_mgr=#{c_mgr}
+    , c_tel=#{c_tel}
+    , sales_mgr=#{sales_mgr}
+  WHERE
+    pid=#{pid}
+</update>
+</mapper>

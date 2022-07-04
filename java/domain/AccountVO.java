@@ -7,6 +7,7 @@ public class AccountVO {
 	private String email;
 	private String name;
 	private int grade;
+	private String grade_name;
 
 	public AccountVO() {}
 
@@ -29,15 +30,21 @@ public class AccountVO {
 		this.account = account;
 		this.grade = grade;
 	}
+	
+	public AccountVO(int uid, String name) {
+		this.uid = uid;
+		this.name = name;
+	}
 
 	// select
-	public AccountVO(int uid, int grade, String account, String pwd, String email, String name) {
+	public AccountVO(int uid, int grade, String account, String pwd, String email, String name, String grade_name) {
 		this.uid = uid;
 		this.account = account;
 		this.pwd = pwd;
 		this.email = email;
 		this.name = name;
 		this.grade = grade;
+		this.grade_name = grade_name;
 	}
 
 	// update
@@ -101,6 +108,14 @@ public class AccountVO {
 
 	public void setGrade(int grade) {
 		this.grade = grade;
+	}
+
+	public String getGrade_name() {
+		return grade_name;
+	}
+
+	public void setGrade_name(String grade_name) {
+		this.grade_name = grade_name;
 	}
 
 

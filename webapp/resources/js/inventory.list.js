@@ -60,10 +60,11 @@ function makeInventoryList(vendor) {
                             <label>Naming</label>
                         </div>
 
-                        <div class="form-floating col-2">
-                            <button class="list-group-item btn-outline-light text-start form-control col-2">${result[i].pnr_name}</button>
-                            <label>Partner</label>
-                        </div>
+                        <form class="form-floating col-2" action="/pnr/detail">
+                            <input value="${ivo.pid }" name="pid" hidden>
+						    <button class="list-group-item btn btn-outline-light text-start form-control">${ivo.pnr_name }</button>
+						    <label>Partner</label>
+                        </form>
 
                         <div class="form-floating col-5" style="width: 35%;">
                             <div class="form-control">${result[i].addr}</div>
@@ -76,7 +77,7 @@ function makeInventoryList(vendor) {
                                 <input type="text" value="${result[i].classifi }" name="classifi" hidden>
                                 <input type="text" value="${result[i].vendor }" name="vendor" hidden>
                                 <button type="submit" formaction="/invt/mod" class="btn btn-outline-warning" style="width: 40px;"><i class="bi bi-pencil-fill"></i></button>
-                                <button type="submit" formaction="/invt/remove" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-recycle"></i></button>
+                                <button type="submit" formaction="/invt/remove" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-trash3"></i></button>
                             </form>
                         </div>
                     </div>
@@ -90,7 +91,12 @@ document.addEventListener('click', (e) => {
     const clickedButton = e.target;
 
     if(clickedButton.classList.contains('vendor-list')) {
-        const activedButton = document.querySelector('.btn-primary');
+        let activedButton = '';
+        document.querySelectorAll('.vendor-list').forEach( (idx) => {
+            if(idx.classList.contains('btn-primary')) {
+                activedButton = idx;
+            }
+        });
 
         clickedButton.className = 'vendor-list btn btn-primary';
         activedButton.className = 'vendor-list btn btn-outline-primary';

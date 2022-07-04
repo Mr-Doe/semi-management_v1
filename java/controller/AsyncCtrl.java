@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import com.mysql.cj.protocol.a.NativeConstants.IntegerDataType;
 
+import domain.AccountVO;
 import domain.ClassifiVO;
 import domain.InventoryVO;
 import domain.PartnerVO;
@@ -138,6 +139,23 @@ public class AsyncCtrl extends HttpServlet {
 				jsonObj[i].put("reason", inventoryList.get(i).getReason());
 				jsonObj[i].put("pnr_name", inventoryList.get(i).getPnr_name());
 				jsonObj[i].put("addr", inventoryList.get(i).getAddr());
+
+				jsonList.add(jsonObj[i]);
+			}
+			jsonData = jsonList.toJSONString();
+
+			out = res.getWriter();
+			out.print(jsonData);
+			break;
+		case "member" :
+			List<AccountVO> accountList = asv.accountList(pathVar);
+			jsonObj = new JSONObject[accountList.size()];
+			jsonList = new JSONArray();
+
+			for (int i = 0; i < accountList.size(); i++) {
+				jsonObj[i] = new JSONObject();
+				jsonObj[i].put("uid", accountList.get(i).getUid());
+				jsonObj[i].put("name", accountList.get(i).getName());
 
 				jsonList.add(jsonObj[i]);
 			}

@@ -9,9 +9,9 @@
 
 	<div class="d-flex justify-content-between mt-4 mt-5">
 		<div class="btn-group btn-group-mg">
-			<button class="btn btn-primary">Apple</button>
-			<button class="btn btn-outline-primary">Samsung</button>
-			<button class="btn btn-outline-primary">LG</button>
+			<button class="vendor-list btn btn-primary">Apple</button>
+			<button class="vendor-list btn btn-outline-primary">Samsung</button>
+			<button class="vendor-list btn btn-outline-primary">LG</button>
 		</div>
 			<a type="submit" class="btn btn-success" style="width: 85px" href="/inventory/create.jsp">New</a>
 	</div>
@@ -30,10 +30,11 @@
 						<label>Naming</label>
 					</div>
 
-					<div class="form-floating col-2">
+          <form class="form-floating col-2" action="/pnr/detail">
+          <input value="${ivo.pid }" name="pid" hidden>
 						<button class="list-group-item btn btn-outline-light text-start form-control">${ivo.pnr_name }</button>
 						<label>Partner</label>
-					</div>
+          </form>
 
 					<div class="form-floating col-5" style="width: 35%;">
 						<div class="form-control">${ivo.addr }</div>
@@ -46,7 +47,7 @@
             <input type="text" value="${ivo.classifi }" name="classifi" hidden>
             <input type="text" value="${ivo.vendor }" name="vendor" hidden>
 						<button type="submit" formaction="/invt/mod" class="btn btn-outline-warning" style="width: 40px;"><i class="bi bi-pencil-fill"></i></button>
-						<button type="submit" formaction="/invt/remove" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-recycle"></i></button>
+						<button type="submit" formaction="/invt/remove" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-trash3"></i></button>
           </form>
 					</div>
 				</div>

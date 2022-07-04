@@ -10,6 +10,7 @@
     <typeAlias type="domain.ClassifiVO" alias="cvo"/>
     <typeAlias type="domain.VendorVO" alias="vvo"/>
     <typeAlias type="domain.PartnerVO" alias="pvo"/>
+    <typeAlias type="domain.AccountVO" alias="avo"/>
   </typeAliases>
 
   <environments default="development">
@@ -27,6 +28,8 @@
   <mappers>
     <mapper resource="mapper/inventoryMapper.xml"/>
     <mapper resource="mapper/asyncMapper.xml"/>
+    <mapper resource="mapper/accountMapper.xml"/>
+    <mapper resource="mapper/partnerMapper.xml"/>
   </mappers>
   
 </configuration>

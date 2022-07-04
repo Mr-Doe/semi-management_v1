@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import domain.AccountVO;
 import domain.ClassifiVO;
 import domain.PartnerVO;
 import domain.VendorVO;
@@ -32,6 +33,11 @@ public class AsyncServiceImpl implements AsyncService {
 	@Override
 	public List<PartnerVO> autocompList(String searchingData) {
 		return adao.getAutocompList(searchingData);
+	}
+
+	@Override
+	public List<AccountVO> accountList(String searchedName) {
+		return adao.getAccountList(searchedName);
 	}
 
 }

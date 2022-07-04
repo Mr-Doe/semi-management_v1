@@ -19,7 +19,7 @@ import service.InventoryServiceImpl;
 @WebServlet("/invt/*")
 public class InventoryCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = LoggerFactory.getLogger(BoardCtrl.class);
+	private static final Logger log = LoggerFactory.getLogger(InventoryCtrl.class);
 	private RequestDispatcher rdp;
 	private int isUp;
 	private String destPage;

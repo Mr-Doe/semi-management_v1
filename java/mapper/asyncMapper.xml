@@ -5,16 +5,42 @@
     
 <mapper namespace="AsyncMapper">
 <select id="classList" resultType="cvo">
-SELECT classifi, e_name, k_name FROM class;
+	SELECT
+	  classifi
+	  , e_name
+	  , k_name
+	FROM
+	  class;
 </select>
 
 <select id="vendorList" resultType="vvo" parameterType="int">
-SELECT vendor, vendor_name, classifi FROM vendor
-WHERE classifi=#{classifi}
+	SELECT
+	  vendor
+	  , vendor_name
+	  , classifi
+	FROM
+	  vendor
+	WHERE
+	  classifi=#{classifi}
 </select>
 
 <select id="autocompList" resultType="pvo" parameterType="string">
-SELECT pid, pnr_name FROM partner WHERE pnr_name LIKE CONCAT('%',#{searchingData},'%')
+	SELECT
+	  pid
+	  , pnr_name
+	FROM
+	  partner
+	WHERE
+	  pnr_name LIKE CONCAT('%',#{searchingData},'%')
 </select>
 
+<select id="searchName" resultType="avo" parameterType="string">
+	SELECT
+	  uid
+	  , name
+	FROM
+	  account
+	WHERE
+	  name LIKE CONCAT('%',#{searchedName},'%')
+</select>
 </mapper>

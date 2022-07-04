@@ -80,14 +80,14 @@
   </div>
     
   <div class="row mt-5">
-    <div class="col">
-      <a type="submit" class="btn btn-outline-warning col-12" href="/invt/mod?iid=${ivo.iid }">Modify</a>
-    </div>
-        <div class="col">
-      <button type="submit" class="btn btn-outline-danger col-12">Remove</button>
-    </div>
+    <form>
+      <input type="text" value="${ivo.iid }" name="iid" hidden>
+      <input type="text" value="${ivo.classifi }" name="classifi" hidden>
+      <input type="text" value="${ivo.vendor }" name="vendor" hidden>
+      <div class="col"><button class="btn btn-outline-warning col-12" formaction="/invt/mod">Modify</button></div>
+      <div class="col"><button class="btn btn-outline-danger col-12" formaction="/invt/remove">Remove</button></div>
+    </form>
   </div>
-  </form>
 </div>
 
 <jsp:include page="../footer.jsp"/>

@@ -7,17 +7,47 @@ public class PartnerVO {
 	private String pnr_tel;
 	private String c_mgr;
 	private String c_tel;
-	private String sales_mgr;
+	private int sales_mgr;
 	private String reg_at;
 	private String writer;
+	private String name;
 	
 	public PartnerVO() {}
 
-	public PartnerVO(int pid, String pnr_name, String pnr_tel, String addr) {
+	// list
+	public PartnerVO(int pid, String pnr_name, String pnr_tel, String addr, int sales_mgr, String name) {
 		this.pid = pid;
 		this.pnr_name = pnr_name;
 		this.pnr_tel = pnr_tel;
 		this.addr = addr;
+		this.sales_mgr = sales_mgr;
+		this.name = name;
+	}
+	
+	// detail
+	public PartnerVO(int pid, String pnr_name, String addr, String pnr_tel, String c_mgr, String c_tel,
+			int sales_mgr, String reg_at, String writer, String name) {
+		this.pid = pid;
+		this.pnr_name = pnr_name;
+		this.addr = addr;
+		this.pnr_tel = pnr_tel;
+		this.c_mgr = c_mgr;
+		this.c_tel = c_tel;
+		this.sales_mgr = sales_mgr;
+		this.reg_at = reg_at;
+		this.writer = writer;
+		this.name = name;
+	}
+	
+	// modify
+	public PartnerVO(int pid, String pnr_name, String addr, String pnr_tel, String c_mgr, String c_tel, int sales_mgr) {
+		this.pid = pid;
+		this.pnr_name = pnr_name;
+		this.addr = addr;
+		this.pnr_tel = pnr_tel;
+		this.c_mgr = c_mgr;
+		this.c_tel = c_tel;
+		this.sales_mgr = sales_mgr;
 	}
 
 	public int getPid() {
@@ -68,11 +98,11 @@ public class PartnerVO {
 		this.c_tel = c_tel;
 	}
 
-	public String getSales_mgr() {
+	public int getSales_mgr() {
 		return sales_mgr;
 	}
 
-	public void setSales_mgr(String sales_mgr) {
+	public void setSales_mgr(int sales_mgr) {
 		this.sales_mgr = sales_mgr;
 	}
 
@@ -90,6 +120,14 @@ public class PartnerVO {
 
 	public void setWriter(String writer) {
 		this.writer = writer;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

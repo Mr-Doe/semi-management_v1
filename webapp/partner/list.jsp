@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <jsp:include page="../header.jsp"/>
@@ -22,22 +22,27 @@
             <label>Partner</label>
           </div>
 
-          <div class="form-floating col-3" style="width: 35%;">
+          <div class="form-floating col-2">
             <div class="form-control">${pvo.pnr_tel }</div>
             <label>Tel.</label>
           </div>
 
-          <div class="form-floating col-5" style="width: 35%;">
+          <div class="form-floating col-5">
             <div class="form-control">${pvo.addr }</div>
             <label>Location</label>
+          </div>
+          
+          <div class="form-floating" style="width: 14.9%;">
+            <div class="form-control">${pvo.name }</div>
+            <label>Manager.</label>
           </div>
   
           <div style="position: absolute; right: 0; top: 50%; transform: translate(0, -50%);">
           <form>
-            <input type="text" value="${pvo.pid }" name="iid" hidden>
-            <button type="submit" formaction="/invt/pnr" class="btn btn-info" style="width: 40px;"><i class="bi bi-list-ol"></i></button>
+            <input type="text" value="${pvo.pid }" name="pid" hidden>
+            <button type="submit" formaction="/invt/pnr" class="btn btn-outline-info" style="width: 40px;"><i class="bi bi-list-ol"></i></button>
             <button type="submit" formaction="/pnr/mod" class="btn btn-outline-warning" style="width: 40px;"><i class="bi bi-pencil-fill"></i></button>
-            <button type="submit" formaction="/pnr/remove" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-recycle"></i></button>
+            <button type="submit" formaction="/pnr/remove" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-trash3"></i></button>
           </form>
           </div>
         </div>
@@ -47,4 +52,4 @@
   
 </div>
 
-<jsp:include page="../footer.jsp"/>
+<jsp:include page="../footer.jsp" />

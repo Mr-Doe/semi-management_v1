@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import domain.AccountVO;
 import domain.ClassifiVO;
 import domain.PartnerVO;
 import domain.VendorVO;
@@ -35,6 +36,11 @@ public class AsyncDAOImpl implements AsyncDAO {
 	@Override
 	public List<PartnerVO> getAutocompList(String searchingData) {
 		return sql.selectList(NS + "autocompList", searchingData);
+	}
+
+	@Override
+	public List<AccountVO> getAccountList(String searchedName) {
+		return sql.selectList(NS + "searchName", searchedName);
 	}
 
 
