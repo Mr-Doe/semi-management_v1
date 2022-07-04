@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="AsyncMapper">
+<select id="classList" resultType="cvo">
+	SELECT
+	  classifi
+	  , e_name
+	  , k_name
+	FROM
+	  class;
+</select>
+
+<select id="vendorList" resultType="vvo" parameterType="int">
+	SELECT
+	  vendor
+	  , vendor_name
+	  , classifi
+	FROM
+	  vendor
+	WHERE
+	  classifi=#{classifi}
+</select>
+
+<select id="autocompList" resultType="pvo" parameterType="string">
+	SELECT
+	  pid
+	  , pnr_name
+	FROM
+	  partner
+	WHERE
+	  pnr_name LIKE CONCAT('%',#{searchingData},'%')
+</select>
+
+<select id="searchName" resultType="avo" parameterType="string">
+	SELECT
+	  uid
+	  , name
+	FROM
+	  account
+	WHERE
+	  name LIKE CONCAT('%',#{searchedName},'%')
+</select>
+</mapper>
