@@ -32,4 +32,14 @@ public class PartnerServiceImpl implements PartnerService {
 		return pdao.update(pvo);
 	}
 
+	@Override
+	public int create(PartnerVO pvo) {
+		return pdao.insert(pvo);
+	}
+
+	@Override
+	public int remove(int pid) {
+		return pdao.delete(pid);
+	}
+
 }

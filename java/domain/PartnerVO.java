@@ -49,6 +49,16 @@ public class PartnerVO {
 		this.c_tel = c_tel;
 		this.sales_mgr = sales_mgr;
 	}
+	
+	// create
+	public PartnerVO(String pnr_name, String addr, String pnr_tel, String c_mgr, String c_tel, int sales_mgr) {
+		this.pnr_name = pnr_name;
+		this.addr = addr;
+		this.pnr_tel = pnr_tel;
+		this.c_mgr = c_mgr;
+		this.c_tel = c_tel;
+		this.sales_mgr = sales_mgr;
+	}
 
 	public int getPid() {
 		return pid;

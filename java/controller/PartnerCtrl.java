@@ -56,17 +56,37 @@ public class PartnerCtrl extends HttpServlet {
 			destPage = "/partner/modify.jsp";
 			break;
 		case "modify" :
-			String pnr_tel = req.getParameter("pnr_tel1") + "-" + req.getParameter("pnr_tel2") + "-" + req.getParameter("pnr_tel3");
+			String modify_pnr_tel = req.getParameter("pnr_tel1") + "-" + req.getParameter("pnr_tel2") + "-" + req.getParameter("pnr_tel3");
+			String modify_c_tel = req.getParameter("c_tel1") + "-" + req.getParameter("c_tel2") + "-" + req.getParameter("c_tel3");
 			isUp = psv.modify(new PartnerVO(
 					Integer.parseInt(req.getParameter("pid")),
 					req.getParameter("pnr_name"),
 					req.getParameter("addr"),
-					pnr_tel,
+					modify_pnr_tel,
 					req.getParameter("c_mgr"),
-					req.getParameter("c_tel"),
+					modify_c_tel,
 					Integer.parseInt(req.getParameter("sales_mgr"))
 					));
 			destPage = "/pnr/detail?pid=" + Integer.parseInt(req.getParameter("pid"));
+			break;
+		case "create" :
+			String create_pnr_tel = req.getParameter("pnr_tel1") + "-" + req.getParameter("pnr_tel2") + "-" + req.getParameter("pnr_tel3");
+			String create_c_tel = req.getParameter("c_tel1") + "-" + req.getParameter("c_tel2") + "-" + req.getParameter("c_tel3");
+			isUp = psv.create(new PartnerVO(
+					req.getParameter("pnr_name"),
+					req.getParameter("addr"),
+					create_pnr_tel,
+					req.getParameter("c_mgr"),
+					create_c_tel,
+					Integer.parseInt(req.getParameter("sales_mgr"))
+					));
+			log.info(">>> PartnerCTLR > Create : {}", isUp > 0 ? "Success" : "Failed");
+			destPage = "/pnr/list";
+			break;
+		case "remove" :
+			isUp = psv.remove(Integer.parseInt(req.getParameter("pid")));
+			log.info(">>> PartnerCTLR > Remove : {}", isUp > 0 ? "Success" : "Failed");
+			destPage = "/pnr/list";
 			break;
 
 		default:

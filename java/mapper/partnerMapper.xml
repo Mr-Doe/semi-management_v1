@@ -49,4 +49,28 @@
   WHERE
     pid=#{pid}
 </update>
+
+<insert id="insert" parameterType="pvo">
+  INSERT INTO partner (
+    pnr_name
+    , addr
+    , pnr_tel
+    , c_mgr
+    , c_tel
+    , sales_mgr
+  ) VALUES (
+    #{pnr_name}
+    , #{addr}
+    , #{pnr_tel}
+    , #{c_mgr}
+    , #{c_tel}
+    , #{sales_mgr}
+  )
+</insert>
+
+<delete id="delete" parameterType="int">
+  DELETE FROM partner 
+  WHERE 
+    pid=#{pid}
+</delete>
 </mapper>

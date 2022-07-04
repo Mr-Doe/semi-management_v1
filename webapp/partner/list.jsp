@@ -5,12 +5,12 @@
 <jsp:include page="../header.jsp"/>
 
 <div class="container mt-3">
-  <h2>Product List</h2>
+  <h2>Partner List</h2>
 
   <div class="d-flex justify-content-between mt-4 mt-5">
     <div class="btn-group btn-group-mg">
     </div>
-      <a type="submit" class="btn btn-success" style="width: 85px" href="/partner]/create.jsp">New</a>
+      <a type="submit" class="btn btn-success" style="width: 85px" href="/partner/create.jsp">New</a>
   </div>
 
   <div class="list-group mt-4">

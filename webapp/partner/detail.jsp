@@ -71,7 +71,7 @@
 		<form class="row mt-5">
 			<input type="text" value="${pvo.pid }" name="pid" hidden>
 			<div class="col"><button class="btn btn-outline-warning col-12" formaction="/pnr/mod">Modify</button></div>
-			<div class="col"><button class="btn btn-outline-danger col-12" formaction="/invt/remove">Remove</button></div>
+			<div class="col"><button class="btn btn-outline-danger col-12" formaction="/pnr/remove">Remove</button></div>
 		</form>
 	
 </div>

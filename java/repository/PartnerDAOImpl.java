@@ -36,4 +36,18 @@ public class PartnerDAOImpl implements PartnerDAO {
 		return isUp;
 	}
 
+	@Override
+	public int insert(PartnerVO pvo) {
+		isUp = sql.insert(NS + "insert", pvo);
+		if(isUp > 0) sql.commit();
+		return isUp;
+	}
+
+	@Override
+	public int delete(int pid) {
+		isUp = sql.delete(NS + "delete", pid);
+		if(isUp > 0) sql.commit();
+		return isUp;
+	}
+
 }

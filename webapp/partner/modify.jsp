@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
@@ -8,11 +7,6 @@
 <div class="container mt-3">
 	<div class="d-flex justify-content-between mt-4 mt-5">
 		<h2 class="float-start">Product Detail</h2>
-		<div style="position: relative;">
-			<a class="btn btn-info" style="width: 85; height: 38px;" href="/pnr/list"> List
-				<div style="border: 19px solid transparent; border-right-color: #0dcaf0; position: absolute; top: 0%; right: 96%"></div>
-			</a>
-		</div>
 	</div>
 
 	<form>
@@ -36,19 +30,19 @@
 			<c:set var="tel_num" value="${fn:split(pvo.pnr_tel,'-') }" />
 			<div class="col">
 				<div class="form-floating mb-3 mt-3">
-					<input type="text" class="form-control" value="${tel_num[0]}" name="pnr_tel1"> 
+					<input type="number" maxlength="3" class="form-control" value="${tel_num[0]}" name="pnr_tel1"> 
 					<label>City.</label>
 				</div>
 			</div>
 			<div class="col">
 				<div class="form-floating mb-3 mt-3">
-					<input type="text" class="form-control" value="${tel_num[1]}" name="pnr_tel2"> 
+					<input type="number" maxlength="4" class="form-control" value="${tel_num[1]}" name="pnr_tel2"> 
 					<label>Region.</label>
 				</div>
 			</div>
 			<div class="col">
 				<div class="form-floating mb-3 mt-3">
-					<input type="text" class="form-control" value="${tel_num[2]}" name="pnr_tel3"> 
+					<input type="number" maxlength="4" class="form-control" value="${tel_num[2]}" name="pnr_tel3"> 
 					<label>Tel.</label>
 				</div>
 			</div>
@@ -63,8 +57,27 @@
 			</div>
 			<div class="col">
 				<div class="form-floating mb-3 mt-3">
-					<input type="text" class="form-control" id="c_tel" value="${pvo.c_tel }" name="c_tel"> 
-					<label>tel</label>
+					<input type="text" class="form-control" id="c_mgr" value=${pvo.name }"  name="c_mgr"> 
+          <label style="font-size:12px;">고객사 담당자</label>
+        </div>
+      </div>
+      <c:set var="c_num" value="${fn:split(pvo.c_tel,'-') }" />
+      <div class="col">
+        <div class="form-floating mb-3 mt-3">
+          <input type="number" maxlength="3" class="form-control" value="${c_num[0] }" name="c_tel1"> 
+          <label style="font-size:12px;">휴대폰 번호 앞자리</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-floating mb-3 mt-3">
+          <input type="number" maxlength="4" class="form-control" value="${c_num[1] }" name="c_tel2"> 
+          <label style="font-size:12px;">휴대폰 번호 중간자리</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-floating mb-3 mt-3">
+          <input type="number" maxlength="4" class="form-control" value="${c_num[2] }" name="c_tel3"> 
+          <label style="font-size:12px;">휴대폰 번호 뒷자리</label>
 				</div>
 			</div>
 		</div>

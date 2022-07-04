@@ -82,7 +82,7 @@ public class InventoryVO {
 		this.iid = iid;
 		this.reason = reason;
 	}
-
+	
 	public int getIid() {
 		return iid;
 	}
