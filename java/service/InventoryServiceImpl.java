@@ -38,8 +38,8 @@ public class InventoryServiceImpl implements InventoryService {
 	}
 
 	@Override
-	public int remove(int iid) {
-		return idao.delete(iid);
+	public int remove(InventoryVO ivo) {
+		return idao.delete(ivo);
 	}
 
 }

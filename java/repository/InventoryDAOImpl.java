@@ -49,8 +49,8 @@ public class InventoryDAOImpl implements InventoryDAO {
 	}
 
 	@Override
-	public int delete(int iid) {
-		isUp = sql.update(NS + "delete", iid);
+	public int delete(InventoryVO ivo) {
+		isUp = sql.update(NS + "delete", ivo);
 		if(isUp > 0) sql.commit();
 		return isUp;
 	}

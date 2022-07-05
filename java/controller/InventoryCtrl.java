@@ -91,7 +91,10 @@ public class InventoryCtrl extends HttpServlet {
 		case "remove" :
 			int delClassifi = Integer.parseInt(req.getParameter("classifi"));
 			int delVendor = Integer.parseInt(req.getParameter("vendor"));
-			isUp = isv.remove(Integer.parseInt(req.getParameter("iid")));
+			isUp = isv.remove(new InventoryVO(
+					Integer.parseInt(req.getParameter("iid")),
+					req.getParameter("reason")
+					));
 			log.info(">>> InventoryCTLR > Remove : {}", isUp > 0 ? "Success" : "Failed");
 			destPage = "/invt/list?classifi=" + delClassifi + "&vendor=" + delVendor;
 			break;

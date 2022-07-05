@@ -85,9 +85,10 @@ INSERT INTO inventory (
 )
 </insert>
 
-<update id="delete" parameterType="int">
+<update id="delete" parameterType="ivo">
 UPDATE inventory SET
   availd='N'
+  , reason=#{reason}
 WHERE
   iid=#{iid}
 </update>

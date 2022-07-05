@@ -24,6 +24,7 @@
 	    ON v.vendor = i.vendor
 	WHERE 
     v.classifi=${classifi} 
+    AND i.availd='Y' 
   GROUP BY
     vendor
 </select>

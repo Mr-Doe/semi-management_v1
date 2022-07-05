@@ -9,5 +9,5 @@ public interface InventoryDAO {
 	public InventoryVO select (int iid);
 	public int update(InventoryVO ivo);
 	public int insert(InventoryVO ivo);
-	public int delete(int iid);
+	public int delete(InventoryVO ivo);
 }

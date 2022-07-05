@@ -9,5 +9,5 @@ public interface InventoryService {
 	public InventoryVO getDetail(int iid);
 	public int modify(InventoryVO ivo);
 	public int create(InventoryVO ivo);
-	public int remove(int iid);
+	public int remove(InventoryVO ivo);
 }
