@@ -15,13 +15,17 @@
 
 <select id="vendorList" resultType="vvo" parameterType="int">
 	SELECT
-	  vendor
-	  , vendor_name
-	  , classifi
-	FROM
-	  vendor
-	WHERE
-	  classifi=#{classifi}
+	  v.vendor
+	  , v.vendor_name
+	  , v.classifi
+	  , COUNT(CASE WHEN i.vendor = v.vendor THEN 1 END) AS 'cnt'
+	FROM vendor v 
+	  INNER JOIN inventory i 
+	    ON v.vendor = i.vendor
+	WHERE 
+    v.classifi=${classifi} 
+  GROUP BY
+    vendor
 </select>
 
 <select id="autocompList" resultType="pvo" parameterType="string">

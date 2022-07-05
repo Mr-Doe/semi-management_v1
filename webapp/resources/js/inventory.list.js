@@ -14,9 +14,9 @@ function showVendorList(result) {
     let html = '';
     for (let i = 0; i < result.length; i++) {
         if (result[i].vendor == supplier) {
-            html += `<button class="vendor-list btn btn-primary" value="${result[i].vendor}">${result[i].vendor_name}</button>`;
+            html += `<button class="vendor-list btn btn-primary" value="${result[i].vendor}">${result[i].vendor_name} <span class="badge bg-danger">${result[i].cnt}</span></button>`;
         } else {
-            html += `<button class="vendor-list btn btn-outline-primary" value="${result[i].vendor}">${result[i].vendor_name}</button>`;
+            html += `<button class="vendor-list btn btn-outline-primary" value="${result[i].vendor}">${result[i].vendor_name} <span class="badge bg-danger">${result[i].cnt}</span></button>`;
         }
     }
     vendorBoxList.innerHTML += html;
@@ -91,18 +91,16 @@ document.addEventListener('click', (e) => {
     const clickedButton = e.target;
 
     if(clickedButton.classList.contains('vendor-list')) {
-        let activedButton = '';
         document.querySelectorAll('.vendor-list').forEach( (idx) => {
             if(idx.classList.contains('btn-primary')) {
-                activedButton = idx;
+                idx.className = 'vendor-list btn btn-outline-primary';
+                clickedButton.className = 'vendor-list btn btn-primary';
+        
+                const vendor = clickedButton.getAttribute('value');
+                makeInventoryList(vendor);
             }
         });
 
-        clickedButton.className = 'vendor-list btn btn-primary';
-        activedButton.className = 'vendor-list btn btn-outline-primary';
-
-        const vendor = clickedButton.getAttribute('value');
-        makeInventoryList(vendor);
     }else if(clickedButton.classList.contains('btn-outline-danger')) {
         updateAvailed
     }else {

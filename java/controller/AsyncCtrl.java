@@ -97,6 +97,7 @@ public class AsyncCtrl extends HttpServlet {
 				jsonObj[i].put("vendor", vendorList.get(i).getVendor());
 				jsonObj[i].put("vendor_name", vendorList.get(i).getVendor_name());
 				jsonObj[i].put("classifi", vendorList.get(i).getClassifi());
+				jsonObj[i].put("cnt", vendorList.get(i).getCnt());
 
 				jsonList.add(jsonObj[i]);
 			}

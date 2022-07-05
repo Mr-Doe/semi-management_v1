@@ -6,7 +6,11 @@
 
 <div class="container mt-3">
 	<h2>Product List</h2>
-
+  
+  <div style="border: 1px solid red">
+  <jsp:include page="/modal/delete.reason.jsp"/>
+  </div>
+  
 	<div class="d-flex justify-content-between mt-4 mt-5">
 		<div class="btn-group btn-group-mg">
 			<button class="vendor-list btn btn-primary">Apple</button>
@@ -42,13 +46,13 @@
 					</div>
   
 					<div style="position: absolute; right: 0; top: 50%; transform: translate(0, -50%);">
-					<form>
-            <input type="text" value="${ivo.iid }" name="iid" hidden>
-            <input type="text" value="${ivo.classifi }" name="classifi" hidden>
-            <input type="text" value="${ivo.vendor }" name="vendor" hidden>
-						<button type="submit" formaction="/invt/mod" class="btn btn-outline-warning" style="width: 40px;"><i class="bi bi-pencil-fill"></i></button>
-						<button type="submit" formaction="/invt/remove" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-trash3"></i></button>
-          </form>
+						<form>
+	            <input type="text" value="${ivo.iid }" name="iid" hidden>
+	            <input type="text" value="${ivo.classifi }" name="classifi" hidden>
+	            <input type="text" value="${ivo.vendor }" name="vendor" hidden>
+							<button type="submit" formaction="/invt/mod" class="btn btn-outline-warning" style="width: 40px;"><i class="bi bi-pencil-fill"></i></button>
+							<button type="button" class="btn btn-outline-danger" style="width: 40px;"><i class="bi bi-trash3"></i></button>
+	          </form>
 					</div>
 				</div>
 			</a>
