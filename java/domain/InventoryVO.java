@@ -34,7 +34,7 @@ public class InventoryVO {
 
 	// list
 	public InventoryVO(int iid, String serial, int classifi, int vendor, String naming, int pid, String mod_at,
-			String reason, String pnr_name, String addr) {
+			String reason, String pnr_name, String addr, String writer) {
 		this.iid = iid;
 		this.serial = serial;
 		this.classifi = classifi;
@@ -45,6 +45,7 @@ public class InventoryVO {
 		this.reason = reason;
 		this.pnr_name = pnr_name;
 		this.addr = addr;
+		this.writer = writer;
 	}
 
 	// select

@@ -4,9 +4,6 @@ public class VendorVO {
 	private int vendor;
 	private String vendor_name;
 	private int classifi;
-	private int aCnt;
-	private int sCnt;
-	private int lCnt;
 	private int cnt;
 
 	public VendorVO() {}
@@ -16,9 +13,6 @@ public class VendorVO {
 		this.vendor_name = vendor_name;
 		this.classifi = classifi;
 		this.cnt = cnt;
-//		this.aCnt = aCnt;
-//		this.sCnt = sCnt;
-//		this.lCnt = lCnt;
 	}
 
 	
@@ -29,30 +23,6 @@ public class VendorVO {
 
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
-	}
-
-	public int getaCnt() {
-		return aCnt;
-	}
-
-	public void setaCnt(int aCnt) {
-		this.aCnt = aCnt;
-	}
-
-	public int getsCnt() {
-		return sCnt;
-	}
-
-	public void setsCnt(int sCnt) {
-		this.sCnt = sCnt;
-	}
-
-	public int getlCnt() {
-		return lCnt;
-	}
-
-	public void setlCnt(int lCnt) {
-		this.lCnt = lCnt;
 	}
 
 	public int getVendor() {

@@ -5,32 +5,38 @@
 <jsp:include page="../header.jsp"/>
 
 <div class="container mt-3">
-  <h2>Removed Items</h2>
+  <h2>Members</h2>
+  
+  <div class="d-flex justify-content-between mt-4 mt-5">
+    <div class="btn-group btn-group-mg">
+    </div>
+      <a type="submit" class="btn btn-success" style="width: 85px" href="#">New</a>
+  </div>
 
   <div class="list-group mt-4">
-    <c:forEach var="ivo" items="${aList }">
+    <c:forEach var="avo" items="${mList }">
     <div class="row" style="position: relative;">
-      <a href="/invt/detail?iid=${ivo.iid }" class="text-decoration-none mt-1" >
+      <a href="#" class="text-decoration-none mt-1" >
         <div class="list-group list-group-horizontal">
         
           <div class="form-floating col-2">
-            <div type="text" class="form-control">${ivo.mod_at }</div>
-            <label>삭제 시간</label>
+            <div type="text" class="form-control">${avo.mod_at }</div>
+            <label>아이디</label>
           </div>
           
           <div class="form-floating col-3">
             <div type="text" class="form-control">${ivo.serial }</div>
-            <label>재고 번호</label>
+            <label>성함</label>
           </div>
           
           <div class="form-floating col-2">
             <div type="text" class="form-control">${ivo.writer }</div>
-            <label>마지막 수정</label>
+            <label>권한</label>
           </div>
 
           <div class="form-floating col-5" style="width: 35%;">
             <div class="form-control">${ivo.reason }</div>
-            <label>삭제 사유</label>
+            <label>마지막 접속 시간</label>
           </div>
         
         </div>
@@ -45,7 +51,5 @@
     </div>
     </c:forEach>
   </div>
-  
-</div>
 
 <jsp:include page="../footer.jsp"/>

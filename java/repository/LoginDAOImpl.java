@@ -17,6 +17,12 @@ public class LoginDAOImpl implements LoginDAO {
 
 	@Override
 	public AccountVO loginSelect(AccountVO avo) {
-		return sql.selectOne(NS + "login", avo);
+		AccountVO result = new AccountVO();
+		result = sql.selectOne(NS + "login", avo);
+		if(result != null) {
+			isUp = sql.update(NS + "last_at", result.getUid());
+			if(isUp > 0) sql.commit();
+		}
+		return result;
 	}
 }

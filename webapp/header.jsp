@@ -35,15 +35,26 @@
 			<div class="container-fluid col">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active" href="/main.jsp">홈</a></li>
-					<li class="nav-item"><a class="nav-link" href="/invt/list?classifi=100&vendor=110">재고</a></li>
+					<li class="nav-item dropdown">
+            <a class="nav-link" data-bs-toggle="dropdown" href="#">재고</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/invt/list?classifi=100&vendor=110">노트북</a></li>
+              <li><a class="dropdown-item" href="/invt/list?classifi=200&vendor=210">서버</a></li>
+            </ul>
+          </li>
 					<li class="nav-item"><a class="nav-link" href="/pnr/list">고객</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">운영</a></li>
+					<li class="nav-item dropdown">
+            <a class="nav-link" data-bs-toggle="dropdown" href="#">운영</a>
+            <ul class="dropdown-menu">
+	            <li><a class="dropdown-item" href="#">계정 목록</a></li>
+	            <li><a class="dropdown-item" href="/adm/invt">삭제된 재고</a></li>
+            </ul>
+          </li>
 				</ul>
 				<form class="d-flex">
 					<div class="form-floating" style="margin-right: 15px">
-						<input type="text" class="form-control"
-							style="margin-right: 100px" id="email" placeholder=" "
-							name="email"> <label for="email">Serial Number</label>
+						<input type="text" class="form-control" style="margin-right: 100px" id="email" placeholder=" " name="email"> 
+						<label for="email" style="font-size:12px;">Serial Number(미구현)</label>
 					</div>
 					<button class="search-btn btn btn-primary" type="button">Search</button>
 				</form>

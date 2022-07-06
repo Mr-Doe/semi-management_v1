@@ -10,4 +10,5 @@ public interface InventoryDAO {
 	public int update(InventoryVO ivo);
 	public int insert(InventoryVO ivo);
 	public int delete(InventoryVO ivo);
+	public List<InventoryVO> selectAdminList();
 }

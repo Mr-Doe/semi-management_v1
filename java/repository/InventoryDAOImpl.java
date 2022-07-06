@@ -55,4 +55,9 @@ public class InventoryDAOImpl implements InventoryDAO {
 		return isUp;
 	}
 
+	@Override
+	public List<InventoryVO> selectAdminList() {
+		return sql.selectList(NS + "admin");
+	}
+
 }

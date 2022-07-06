@@ -8,6 +8,7 @@ public class AccountVO {
 	private String name;
 	private int grade;
 	private String grade_name;
+	private String last_at;
 
 	public AccountVO() {}
 
@@ -25,10 +26,12 @@ public class AccountVO {
 	}
 
 	// list
-	public AccountVO(int uid, String account, int grade) {
+	public AccountVO(int uid, String account, int grade, String last_at, String grade_name) {
 		this.uid = uid;
 		this.account = account;
 		this.grade = grade;
+		this.last_at = last_at;
+		this.grade_name = grade_name;
 	}
 	
 	public AccountVO(int uid, String name) {
@@ -37,7 +40,7 @@ public class AccountVO {
 	}
 
 	// select
-	public AccountVO(int uid, int grade, String account, String pwd, String email, String name, String grade_name) {
+	public AccountVO(int uid, int grade, String account, String pwd, String email, String name, String grade_name, String last_at) {
 		this.uid = uid;
 		this.account = account;
 		this.pwd = pwd;
@@ -45,6 +48,7 @@ public class AccountVO {
 		this.name = name;
 		this.grade = grade;
 		this.grade_name = grade_name;
+		this.last_at = last_at;
 	}
 
 	// update
@@ -116,6 +120,14 @@ public class AccountVO {
 
 	public void setGrade_name(String grade_name) {
 		this.grade_name = grade_name;
+	}
+
+	public String getLast_at() {
+		return last_at;
+	}
+
+	public void setLast_at(String last_at) {
+		this.last_at = last_at;
 	}
 
 

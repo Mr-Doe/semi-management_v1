@@ -5,21 +5,28 @@
     
 <mapper namespace="LoginMapper">
 <select id="login" parameterType="avo" resultType="avo">
-SELECT
-  uid
-  , account
-  , pwd
-  , email
-  , name
-  , a.grade
-  , g.grade_name
-FROM
-  account a
-    INNER JOIN grade g
-      ON a.grade = g.grade
-WHERE
-  account=#{account}
-  AND pwd=#{pwd}
+	SELECT
+	  uid
+	  , account
+	  , pwd
+	  , email
+	  , name
+	  , a.grade
+	  , g.grade_name
+	  , last_at
+	FROM
+	  account a
+	    INNER JOIN grade g
+	      ON a.grade = g.grade
+	WHERE
+	  account=#{account}
+	  AND pwd=#{pwd}
 </select>
 
+<update id="last_at" parameterType="int">
+  UPDATE account SET
+    last_at = now()
+  WHERE
+    uid=#{uid}
+</update>
 </mapper>
