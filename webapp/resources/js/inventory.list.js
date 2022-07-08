@@ -53,23 +53,23 @@ function makeInventoryList(vendor) {
                             <div class="list-group list-group-horizontal">
                                 <div class="form-floating col-3">
                                     <div type="text" class="form-control">${result[i].serial}</div>
-                                    <label>Serial Number</label>
+                                    <label>재고 번호</label>
                                 </div>
 
                                 <div class="form-floating col-2">
                                     <div type="text" class="form-control">${result[i].naming}</div>
-                                    <label>Naming</label>
+                                    <label>약칭</label>
                                 </div>
 
                                 <form class="form-floating col-2" action="/pnr/detail">
                                     <input value="${result[i].pid }" name="pid" hidden>
 						            <button class="list-group-item btn btn-outline-light text-start form-control">${result[i].pnr_name }</button>
-						            <label>Partner</label>
+						            <label>고객사</label>
                                 </form>
 
                                 <div class="form-floating col-5" style="width: 35%;">
                                     <div class="form-control">${result[i].addr}</div>
-                                    <label>Location</label>
+                                    <label>위치</label>
                                 </div>
                             </div>
                         </a>

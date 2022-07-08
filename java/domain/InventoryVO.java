@@ -18,6 +18,7 @@ public class InventoryVO {
 	private String e_name;
 	private String k_name;
 	private String vendor_name;
+	private int listCount;
 
 	public InventoryVO() {}
 
@@ -229,9 +230,5 @@ public class InventoryVO {
 	public void setK_name(String k_name) {
 		this.k_name = k_name;
 	}
-
-
-
-
 
 }

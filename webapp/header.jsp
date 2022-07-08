@@ -16,7 +16,7 @@
   <c:set var="session" value="${login_session }" scope="session" />
   
 	<div class="container-fluid mt-3">
-		<div class="mt-4 p-5 bg-primary text-white text-center rounded">
+		<div class="mt-4 p-4 bg-primary text-white text-center rounded">
 			<h1>인벤 정리</h1>
 			<p>재고 & 고객사 관리</p>
 		</div>
@@ -33,13 +33,15 @@
             </ul>
           </li>
 					<li class="nav-item"><a class="nav-link" href="/pnr/list">고객</a></li>
-					<li class="nav-item dropdown">
-            <a class="nav-link" data-bs-toggle="dropdown" href="#">운영</a>
-            <ul class="dropdown-menu">
-	            <li><a class="dropdown-item" href="/adm/mem">계정 목록</a></li>
-	            <li><a class="dropdown-item" href="/adm/invt">삭제된 재고</a></li>
-            </ul>
-          </li>
+					<c:if test="${session.grade eq '10' }">
+						<li class="nav-item dropdown">
+	            <a class="nav-link" data-bs-toggle="dropdown" href="#">운영</a>
+	            <ul class="dropdown-menu">
+		            <li><a class="dropdown-item" href="/adm/mem">계정 목록</a></li>
+		            <li><a class="dropdown-item" href="/adm/invt">삭제된 재고</a></li>
+	            </ul>
+	          </li>
+          </c:if>
 				</ul>
 				<form class="d-flex">
 					<div class="form-floating" style="margin-right: 15px">
@@ -57,3 +59,5 @@
     const test = '<c:out value="${login_session}"/>';
   </script>
 	<script src="/resources/js/header.js"></script> -->
+	
+  <div style="height: 55vh;">

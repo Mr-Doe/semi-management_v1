@@ -5,10 +5,10 @@
 <jsp:include page="../header.jsp"/>
 <jsp:include page="/modal/delete.reason.jsp"/>
 
-<div class="container mt-3">
+<div class="container mt-5">
 	<h2>${iList[0].k_name } 목록</h2>
   
-	<div class="d-flex justify-content-between mt-4 mt-5">
+	<div class="d-flex justify-content-between mt-3">
 		<div class="btn-group btn-group-mg">
 			<a class="vendor-list btn btn-primary">Apple</a>
 			<a class="vendor-list btn btn-outline-primary">Samsung</a>

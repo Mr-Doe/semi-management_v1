@@ -1,3 +1,3 @@
 document.addEventListener('click', (e) => {
-    if(document.querySelector('#ts').innerText == "") window.location.replace('http://localhost:8088/');
+    if(document.querySelector('#ts') == null) window.location.replace('http://localhost:8088/');
 });
