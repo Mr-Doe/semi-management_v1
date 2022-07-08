@@ -44,6 +44,10 @@ public class AdminCtrl extends HttpServlet {
 			req.setAttribute("aList", asv.getItemList());
 			destPage = "/admin/items.jsp";
 			break;
+		case "mem" :
+			req.setAttribute("mList", asv.getMemList());
+			destPage = "/admin/members.jsp";
+			break;
 
 		default:
 			break;

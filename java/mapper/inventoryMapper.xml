@@ -8,7 +8,7 @@
 	SELECT
 	  iid
 	  , serial
-	  , classifi
+	  , i.classifi
 	  , vendor
 	  , naming
 	  , i.pid
@@ -17,12 +17,15 @@
 	  , p.pnr_name
 	  , p.addr
 	  , i.writer
+	  , c.k_name
 	FROM
 	  inventory i
 	    INNER JOIN partner p
 	      ON i.pid = p.pid
+      INNER JOIN class c
+        ON i.classifi = c.classifi
 	WHERE
-	  classifi=#{classifi}
+	  i.classifi=#{classifi}
 	  AND vendor=#{vendor}
 	  AND availd='Y';
 </select>

@@ -30,6 +30,8 @@ public class AsyncDAOImpl implements AsyncDAO {
 
 	@Override
 	public List<VendorVO> getVendorList(int classifi) {
+		new DataBaseBuilder();
+		sql = DataBaseBuilder.getFactory().openSession();
 		return sql.selectList(NS + "vendorList", classifi);
 	}
 

@@ -26,9 +26,10 @@ public class AccountVO {
 	}
 
 	// list
-	public AccountVO(int uid, String account, int grade, String last_at, String grade_name) {
+	public AccountVO(int uid, String account, String name, int grade, String last_at, String grade_name) {
 		this.uid = uid;
 		this.account = account;
+		this.name = name;
 		this.grade = grade;
 		this.last_at = last_at;
 		this.grade_name = grade_name;

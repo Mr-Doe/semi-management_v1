@@ -5,12 +5,12 @@
 <jsp:include page="../header.jsp"/>
 
 <div class="container mt-3">
-  <h2>Members</h2>
+  <h2>계정 목록</h2>
   
   <div class="d-flex justify-content-between mt-4 mt-5">
     <div class="btn-group btn-group-mg">
     </div>
-      <a type="submit" class="btn btn-success" style="width: 85px" href="#">New</a>
+      <a type="submit" class="btn btn-success" style="width: 85px" href="#">등록</a>
   </div>
 
   <div class="list-group mt-4">
@@ -20,22 +20,22 @@
         <div class="list-group list-group-horizontal">
         
           <div class="form-floating col-2">
-            <div type="text" class="form-control">${avo.mod_at }</div>
+            <div type="text" class="form-control">${avo.account }</div>
             <label>아이디</label>
           </div>
           
           <div class="form-floating col-3">
-            <div type="text" class="form-control">${ivo.serial }</div>
-            <label>성함</label>
+            <div type="text" class="form-control">${avo.name }</div>
+            <label>이름</label>
           </div>
           
           <div class="form-floating col-2">
-            <div type="text" class="form-control">${ivo.writer }</div>
+            <div type="text" class="form-control">${avo.grade_name }</div>
             <label>권한</label>
           </div>
 
           <div class="form-floating col-5" style="width: 35%;">
-            <div class="form-control">${ivo.reason }</div>
+            <div class="form-control">${avo.last_at }</div>
             <label>마지막 접속 시간</label>
           </div>
         

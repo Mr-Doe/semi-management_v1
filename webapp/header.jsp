@@ -7,28 +7,16 @@
 <meta charset="UTF-8">
 <title>인벤 정리</title>
 <link href="/resources/dist/css/bootstrap.min.css" rel="stylesheet">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-	rel="stylesheet">
+<script src="/resources/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
-
-	<c:set var="session" value="${login_session }" scope="session" />
-	<c:if test="${session ne null }">
-		<a href="#" id="ts">
-      ${session.name }<br>
-			${session.grade_name }
-		</a>
-		<a class="btn btn-success" href="/login/logout">Log out</a>
-	</c:if>
-	<c:if test="${session eq null }">
-	 <a href="#" id="ts"></a>
-	</c:if>
 
 	<div class="container-fluid mt-3">
 		<div class="mt-4 p-5 bg-primary text-white text-center rounded">
 			<h1>인벤 정리</h1>
-			<p>재고관리 & 파트너 명부</p>
+			<p>재고 & 고객사 관리</p>
 		</div>
 
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -46,7 +34,7 @@
 					<li class="nav-item dropdown">
             <a class="nav-link" data-bs-toggle="dropdown" href="#">운영</a>
             <ul class="dropdown-menu">
-	            <li><a class="dropdown-item" href="#">계정 목록</a></li>
+	            <li><a class="dropdown-item" href="/adm/mem">계정 목록</a></li>
 	            <li><a class="dropdown-item" href="/adm/invt">삭제된 재고</a></li>
             </ul>
           </li>

@@ -37,14 +37,15 @@ public class InventoryDAOImpl implements InventoryDAO {
 
 	@Override
 	public int update(InventoryVO ivo) {
-		return sql.update(NS + "update", ivo);
+		isUp = sql.update(NS + "update", ivo);
+		if(isUp > 0) sql.commit();
+		return isUp;
 	}
 
 	@Override
 	public int insert(InventoryVO ivo) {
 		isUp = sql.insert(NS + "insert", ivo);
 		if(isUp > 0) sql.commit();
-		
 		return isUp;
 	}
 

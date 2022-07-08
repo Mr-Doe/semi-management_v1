@@ -29,4 +29,17 @@
   WHERE
     uid=#{uid}
 </update>
+
+<select id="list" resultType="avo">
+  SELECT
+    uid
+    , account
+    , name
+    , a.grade
+    , last_at
+    , grade_name
+  FROM account a
+    INNER JOIN grade g
+      ON a.grade = g.grade
+</select>
 </mapper>

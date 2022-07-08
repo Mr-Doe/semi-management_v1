@@ -5,7 +5,7 @@
 <jsp:include page="../header.jsp"/>
 
 <div class="container mt-3">
-  <h2>Removed Items</h2>
+  <h2>삭제 재고 목록</h2>
 
   <div class="list-group mt-4">
     <c:forEach var="ivo" items="${aList }">

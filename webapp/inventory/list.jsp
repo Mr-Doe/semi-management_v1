@@ -6,7 +6,7 @@
 <jsp:include page="/modal/delete.reason.jsp"/>
 
 <div class="container mt-3">
-	<h2>Product List</h2>
+	<h2>${iList[0].k_name } 목록</h2>
   
 	<div class="d-flex justify-content-between mt-4 mt-5">
 		<div class="btn-group btn-group-mg">
@@ -24,23 +24,23 @@
 				<div class="list-group list-group-horizontal">
 					<div class="form-floating col-3">
 						<div type="text" class="form-control">${ivo.serial }</div>
-						<label>Serial Number</label>
+						<label>재고 번호</label>
 					</div>
 
 					<div class="form-floating col-2">
 						<div type="text" class="form-control">${ivo.naming }</div>
-						<label>Naming</label>
+						<label>약칭</label>
 					</div>
 
           <form class="form-floating col-2" action="/pnr/detail">
           <input value="${ivo.pid }" name="pid" hidden>
 						<button class="list-group-item btn btn-outline-light text-start form-control">${ivo.pnr_name }</button>
-						<label>Partner</label>
+						<label>고객사</label>
           </form>
 
 					<div class="form-floating col-5" style="width: 35%;">
 						<div class="form-control">${ivo.addr }</div>
-						<label>Location</label>
+						<label>현 재고 위치</label>
 					</div>
 				</div>
 			</a>

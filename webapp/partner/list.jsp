@@ -5,7 +5,7 @@
 <jsp:include page="../header.jsp"/>
 
 <div class="container mt-3">
-  <h2>Partner List</h2>
+  <h2>고객사 목록</h2>
 
   <div class="d-flex justify-content-between mt-4 mt-5">
     <div class="btn-group btn-group-mg">
@@ -19,22 +19,22 @@
         <div class="list-group list-group-horizontal" style="position: relative">
           <div class="form-floating col-2">
             <div class="form-control">${pvo.pnr_name }</div>
-            <label>Partner</label>
+            <label>고객사 명</label>
           </div>
 
           <div class="form-floating col-2">
             <div class="form-control">${pvo.pnr_tel }</div>
-            <label>Tel.</label>
+            <label>연락처</label>
           </div>
 
           <div class="form-floating col-5">
             <div class="form-control">${pvo.addr }</div>
-            <label>Location</label>
+            <label>주소</label>
           </div>
           
           <div class="form-floating" style="width: 14.9%;">
             <div class="form-control">${pvo.name }</div>
-            <label>Manager.</label>
+            <label>담당 관리자</label>
           </div>
   
           <div style="position: absolute; right: 0; top: 50%; transform: translate(0, -50%);">

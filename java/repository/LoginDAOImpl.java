@@ -1,5 +1,7 @@
 package repository;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import domain.AccountVO;
@@ -24,5 +26,10 @@ public class LoginDAOImpl implements LoginDAO {
 			if(isUp > 0) sql.commit();
 		}
 		return result;
+	}
+
+	@Override
+	public List<AccountVO> selectAdminList() {
+		return sql.selectList(NS + "list");
 	}
 }
