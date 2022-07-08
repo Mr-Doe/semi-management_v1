@@ -4,10 +4,7 @@
 
 <div class="container mt-5" style="position: absolute; bottom: 5%;">
 	<div class="dropup dropdown-menu-end">
-		<span type="button" class="btn btn-outline-dark"
-			data-bs-toggle="dropdown" style="float: right"> <i
-			class="bi bi-list"></i>
-		</span>
+		<span type="button" class="btn btn-outline-dark" data-bs-toggle="dropdown" style="float: right"><i class="bi bi-list"></i></span>
 		<ul class="dropdown-menu">
 			<li>
         <a class="dropdown-item" id="logging-info" href="#">
@@ -24,9 +21,6 @@
 	</div>
 </div>
 
-<script>
-console.log(document.querySelector('#ts').innerText == "");
-</script>
 <script src="/resources/js/footer.js"></script>
 </body>
 </html>

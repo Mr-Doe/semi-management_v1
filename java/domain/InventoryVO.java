@@ -80,9 +80,10 @@ public class InventoryVO {
 
 
 	// update (delete)
-	public InventoryVO(int iid, String reason) {
+	public InventoryVO(int iid, String reason, String writer) {
 		this.iid = iid;
 		this.reason = reason;
+		this.writer = writer;
 	}
 	
 	public int getIid() {

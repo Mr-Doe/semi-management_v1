@@ -13,6 +13,8 @@
 </head>
 <body>
 
+  <c:set var="session" value="${login_session }" scope="session" />
+  
 	<div class="container-fluid mt-3">
 		<div class="mt-4 p-5 bg-primary text-white text-center rounded">
 			<h1>인벤 정리</h1>

@@ -13,7 +13,7 @@
       <a href="/invt/detail?iid=${ivo.iid }" class="text-decoration-none mt-1" >
         <div class="list-group list-group-horizontal">
         
-          <div class="form-floating col-2">
+          <div class="form-floating col-2" style="white-space: nowrap;">
             <div type="text" class="form-control">${ivo.mod_at }</div>
             <label>삭제 시간</label>
           </div>
@@ -28,7 +28,7 @@
             <label>마지막 수정</label>
           </div>
 
-          <div class="form-floating col-5" style="width: 35%;">
+          <div class="form-floating col-4" style="width: 35%;">
             <div class="form-control">${ivo.reason }</div>
             <label>삭제 사유</label>
           </div>

@@ -93,6 +93,7 @@
 	UPDATE inventory SET
 	  availd='N'
 	  , reason=#{reason}
+	  , writer=#{writer}
 	WHERE
 	  iid=#{iid}
 </update>

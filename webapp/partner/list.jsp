@@ -27,12 +27,12 @@
             <label>연락처</label>
           </div>
 
-          <div class="form-floating col-5">
+          <div class="form-floating col-4">
             <div class="form-control">${pvo.addr }</div>
             <label>주소</label>
           </div>
           
-          <div class="form-floating" style="width: 14.9%;">
+          <div class="form-floating col-2">
             <div class="form-control">${pvo.name }</div>
             <label>담당 관리자</label>
           </div>

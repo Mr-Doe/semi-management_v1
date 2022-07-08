@@ -20,6 +20,7 @@
 			 <input tyep="text" value="" name="iid" hidden>
 			 <input tyep="text" value="" name="classifi" hidden>
 			 <input tyep="text" value="" name="vendor" hidden>
+			 <input tyep="text" value="${session.name }" name="name" hidden>
 				<button type="submit" class="btn btn-danger">삭제</button>
 			</div>
 			</form>
